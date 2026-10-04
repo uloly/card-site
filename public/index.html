@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f8f3ee">
+  <title>MyCard | اصنع بطاقة من القلب</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap');
+    :root{font-family:'Cairo',sans-serif;color:#342d2d;background:#f8f3ee;font-synthesis:none;text-rendering:optimizeLegibility;--ink:#342d2d;--muted:#867a75;--line:#e9ded6;--paper:#fffdfa;--wine:#843b4d;--rose:#c97982;--sage:#567568;--peach:#f2d5ca}
+    *{box-sizing:border-box}body{margin:0;min-height:100vh;background:radial-gradient(ellipse at 90% 4%,#f1e0d6 0,transparent 34%),radial-gradient(ellipse at 0 80%,#e8eee7 0,transparent 28%),#f8f3ee}button,input,textarea{font:inherit}button{cursor:pointer}button:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid #bd777d66;outline-offset:2px}.topbar{height:76px;padding:0 max(5vw,24px);display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #e7dcd3;background:#faf7f2d9}.brand{display:flex;align-items:center;gap:10px;color:var(--wine);font-size:22px;font-weight:800}.brand-mark{display:grid;place-items:center;width:38px;height:38px;border:1px solid #d4b5aa;border-radius:50%;font-size:22px}.top-note{font-size:12px;color:var(--muted)}.layout{max-width:1400px;margin:30px auto;padding:0 24px 50px;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(370px,.95fr);gap:26px;align-items:start}.editor,.preview{border:1px solid #e8ddd5;background:#fffdfaeb;box-shadow:0 18px 55px #76584d12}.editor{padding:28px 32px}.intro{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin:0 0 24px}.eyebrow{font-size:11px;font-weight:700;letter-spacing:0;color:var(--sage)}h1{font-size:25px;line-height:1.5;margin:3px 0 0}.intro p{color:var(--muted);font-size:12px;margin:3px 0 0}.step-pill{flex:none;color:var(--sage);border:1px solid #d8e1d9;padding:5px 10px;font-size:11px}.group{padding:19px 0;border-top:1px solid #eee5de}.group-title{display:flex;align-items:center;gap:10px;margin:0 0 14px;font-size:14px}.group-title b{color:var(--rose);font-family:'Playfair Display',serif;font-size:19px;font-weight:500}.fields{display:grid;grid-template-columns:1fr 1fr;gap:12px}.field{display:block;color:#6e625e;font-size:11px;font-weight:700}.field input,.field textarea{display:block;width:100%;margin-top:6px;padding:10px 12px;border:1px solid var(--line);border-radius:2px;color:var(--ink);background:#fff;font-size:13px}.field input{height:42px}.field textarea{min-height:82px;resize:vertical;line-height:1.9}.field input::placeholder,.field textarea::placeholder{color:#b7aaa3}.wide{grid-column:1/-1}.upload-row{display:flex;gap:10px}.upload-control{position:relative;display:flex;flex:1;align-items:center;justify-content:center;min-height:54px;border:1px dashed #cfaaa1;color:var(--wine);font-size:12px;font-weight:700;cursor:pointer;background:#fcf5f1}.upload-control input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:pointer}.upload-hint{margin:8px 0 0;color:var(--muted);font-size:10px}.thumbs{display:flex;gap:7px;flex-wrap:wrap;margin-top:11px}.thumbs img{width:52px;height:52px;object-fit:cover;border:1px solid #e9d9d0}.theme-options{display:flex;gap:8px}.theme-option{position:relative;flex:1}.theme-option input{position:absolute;opacity:0}.theme-option span{display:flex;align-items:center;justify-content:center;gap:7px;padding:10px 7px;border:1px solid var(--line);font-size:11px;cursor:pointer}.theme-option input:checked+span{border-color:var(--wine);background:#f7ece9;color:var(--wine)}.swatch{width:12px;height:12px;border-radius:50%;background:#c97982}.swatch.soft{background:#8fa99c}.swatch.blush{background:#d79c76}.submit{width:100%;height:49px;border:0;background:var(--wine);color:#fff;font-weight:700;font-size:14px;transition:background .2s}.submit:hover{background:#6f3040}.submit:disabled{opacity:.65;cursor:wait}.result{margin-top:14px;padding:14px;background:#eef3ef;border-right:3px solid var(--sage);font-size:12px}.result.error{background:#fbefed;border-color:#b65858;color:#783333}.share-row{display:flex;gap:7px;margin-top:10px}.share-row input{flex:1;min-width:0;border:1px solid var(--line);padding:8px;direction:ltr;background:#fff;font-size:11px}.share-row button,.open-link{padding:8px 12px;border:1px solid var(--sage);background:var(--sage);color:white;text-decoration:none;font-size:11px}.open-link{display:inline-block;margin-top:8px}.hidden{display:none!important}.preview{position:sticky;top:24px;overflow:hidden}.preview-head{height:55px;padding:0 20px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}.preview-head h2{margin:0;font-size:13px}.live{display:flex;align-items:center;gap:6px;color:var(--sage);font-size:10px}.live i{width:7px;height:7px;border-radius:50%;background:#6c9b79}.preview-stage{min-height:545px;padding:32px 22px 20px;display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;overflow:hidden;background:radial-gradient(ellipse at 50% 15%,#fff 0,transparent 64%),#f6ede8}.preview-stage:before,.preview-stage:after{content:'✳';position:absolute;color:#d4aaa0;font-size:20px;opacity:.55}.preview-stage:before{top:28px;right:28px}.preview-stage:after{bottom:34px;left:30px}.mini-card{position:relative;width:min(100%,355px);min-height:405px;padding:35px 30px;background:#fffdfa;border:1px solid #ead8ce;box-shadow:0 20px 45px #59433c1c;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;animation:appear .35s ease both}.mini-card.theme-soft{background:#f6faf5;border-color:#cadacf}.mini-card.theme-blush{background:#fff8f3;border-color:#e8c9b7}.ornament{color:var(--rose);font-size:24px;line-height:1}.mini-kicker{margin-top:15px;color:var(--muted);font-size:11px}.mini-card h2{margin:7px 0 0;color:var(--wine);font-size:28px}.mini-title{font-family:'Playfair Display',serif;font-size:20px;color:#76615b;direction:ltr}.mini-heart{margin:10px 0;color:#c97982;font-size:27px}.mini-body{max-width:270px;white-space:pre-wrap;font-size:14px;line-height:2}.mini-sign{margin-top:16px;color:var(--muted);font-size:11px}.mini-photo{width:205px;height:175px;object-fit:cover;border:6px solid white;box-shadow:0 4px 20px #59433c20}.photo-placeholder{width:205px;height:175px;display:grid;place-items:center;background:#f2e7e1;color:#b48a7f;font-size:32px}.preview-count{position:absolute;bottom:17px;right:20px;color:#948781;font-size:10px}.preview-controls{display:flex;align-items:center;gap:18px;direction:ltr}.preview-controls button{width:32px;height:32px;border:1px solid #daccc3;background:#fff;color:var(--wine);font-size:17px}.preview-controls span{font-size:10px;color:var(--muted)}.card-view{max-width:860px;min-height:100vh;margin:auto;padding:38px 24px;display:flex;flex-direction:column;align-items:center;justify-content:center}.public-brand{margin-bottom:18px;color:var(--wine);font-size:14px;font-weight:700}.public-card{width:min(100%,690px);min-height:480px;padding:48px 35px 28px;position:relative;overflow:hidden;border:1px solid #e8d7ce;background:#fffdfa;box-shadow:0 25px 80px #51372f20;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;animation:appear .45s ease both}.public-card.theme-soft{background:#f5faf5;border-color:#cedbd0}.public-card.theme-blush{background:#fff8f3;border-color:#e7caba}.scene-kicker{color:#927e75;font-size:12px}.public-card h1{margin:10px 0 2px;color:var(--wine);font-size:39px}.public-title{font-family:'Playfair Display',serif;font-size:27px;color:#78635d;direction:ltr}.public-date{margin-top:10px;color:#9b8378;font-size:12px}.public-message{max-width:520px;margin:15px auto;white-space:pre-wrap;font-size:17px;line-height:2.15}.public-sign{color:#8c7770;font-size:13px}.public-photos{width:100%;display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:9px;margin:20px 0}.public-photos img{width:100%;height:210px;object-fit:cover}.audio-player{width:min(320px,100%);height:36px;margin:0 0 15px}.card-controls{display:flex;align-items:center;gap:18px;margin-top:20px}.card-controls button{min-width:92px;padding:10px 15px;border:1px solid var(--wine);background:var(--wine);color:#fff;font-size:12px}.card-controls button.secondary{background:transparent;color:var(--wine)}.card-controls button:disabled{opacity:.45;cursor:not-allowed}.card-controls span{color:#8b7d77;font-size:11px}.not-found{padding:50px;text-align:center;color:var(--wine)}@keyframes appear{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+    @media(max-width:900px){.layout{grid-template-columns:minmax(0,1fr) minmax(310px,.85fr);gap:16px;padding-inline:16px}.editor{padding:24px 20px}.preview-stage{min-height:500px}.mini-card{min-height:380px}}
+    @media(max-width:700px){.topbar{height:64px;padding-inline:18px}.top-note{max-width:160px;text-align:left;font-size:10px}.layout{display:flex;flex-direction:column;padding:0 12px 28px;margin:16px auto}.editor,.preview{width:100%}.editor{padding:22px 16px}.preview{position:static;order:-1}.preview-stage{min-height:430px;padding:24px 16px}.mini-card{min-height:340px}.fields{gap:10px}.intro{margin-bottom:18px}.public-card{min-height:430px;padding:35px 20px 24px}.public-card h1{font-size:32px}.public-photos img{height:155px}}
+    @media(max-width:390px){.fields{grid-template-columns:1fr}.wide{grid-column:auto}.theme-options{gap:5px}.theme-option span{font-size:10px}.share-row{flex-wrap:wrap}.share-row input{flex-basis:100%}.card-controls{gap:8px}.card-controls button{min-width:82px}}
+    @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+  </style>
+  <style>
+    .share-url{display:block;margin-top:9px;color:var(--wine);direction:ltr;text-align:left;overflow-wrap:anywhere;font-size:11px}
+    img.zoomable{cursor:zoom-in}img.zoomable:focus-visible{outline:3px solid #bd777d;outline-offset:3px}
+    .image-viewer{width:min(94vw,1100px);max-width:none;height:min(90vh,850px);height:min(90dvh,850px);max-height:none;margin:auto;padding:56px 20px 20px;overflow:hidden;border:1px solid #ffffff55;border-radius:3px;background:#211b1c;color:white}
+    .image-viewer[open]{display:grid;grid-template-rows:minmax(0,1fr);place-items:center}.image-viewer::backdrop{background:#171314e8;backdrop-filter:blur(4px)}
+    .image-viewer img{width:100%;height:100%;min-width:0;min-height:0;object-fit:contain}.image-viewer button{position:absolute;top:10px;inset-inline-end:12px;width:40px;height:40px;border:1px solid #ffffff80;border-radius:50%;background:#ffffff18;color:#fff;font-size:27px;line-height:1}
+    .birthday-decor{position:absolute;inset:0;z-index:0;pointer-events:none}.birthday-decor span{position:absolute;display:block;animation:float 3.8s ease-in-out infinite}.birthday-decor span:first-child{top:12px;inset-inline-start:18px;font-size:clamp(25px,5vw,42px)}.birthday-decor span:nth-child(2){top:12px;inset-inline-end:18px;font-size:clamp(25px,5vw,42px);animation-delay:-1.4s}.birthday-decor span:last-child{bottom:13px;inset-inline-start:20px;font-size:clamp(23px,4vw,34px);animation-delay:-2.5s}.public-card>:not(.birthday-decor),.mini-card>:not(.birthday-decor){position:relative;z-index:1}
+    @keyframes float{0%,100%{transform:translateY(0) rotate(-4deg)}50%{transform:translateY(-7px) rotate(4deg)}}
+    @media(max-width:520px){.image-viewer{width:96vw;height:88vh;height:88dvh;padding:54px 10px 12px}.image-viewer img{max-width:100%;max-height:100%}}
+    .music-player{position:fixed;z-index:20;bottom:18px;left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:11px;width:min(340px,calc(100vw - 28px));padding:10px 13px;border:1px solid var(--line);background:#fffdfa;box-shadow:0 10px 35px #342d2d24}
+    .music-player audio{display:none}.music-player button{width:36px;height:36px;flex:none;border:0;border-radius:50%;background:var(--wine);color:white;font-size:13px}
+    .music-track{flex:1;min-width:0;direction:ltr}.music-meta{display:flex;justify-content:space-between;gap:10px;color:var(--muted);font-size:10px}.music-progress{display:block;width:100%;height:4px;margin:8px 0 2px;accent-color:var(--wine);cursor:pointer}
+    .card-view.has-music .card-controls{margin-bottom:78px}
+    body{isolation:isolate}
+    body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;background:linear-gradient(rgba(248,243,238,.12),rgba(248,243,238,.12)),url('/loly.jpeg') center 24%/cover no-repeat;opacity:.32}
+    #builder,#cardView{position:relative;z-index:1}
+    .editor,.preview{background:rgba(255,253,250,.78)}
+    .preview-stage{background:rgba(246,237,232,.78)}
+  </style>
+</head>
+<body>
+  <div id="builder">
+    <header class="topbar"><div class="brand"><span class="brand-mark">♡</span> MyCard</div><div class="top-note">كل سنة وأنت فرحة العمر</div></header>
+    <main class="layout">
+      <form class="editor" id="cardForm">
+        <div class="intro"><div><div class="eyebrow">هدية عيد ميلاد من القلب</div><h1>بطاقة عيد ميلاد تحمل معنى</h1><p>اكتب كلماتك، واختر الصور، ثم شاركها برابط خاص.</p></div><span class="step-pill">♡ بطاقة تفاعلية</span></div>
+        <section class="group">
+          <h2 class="group-title"><b>01</b> لمن هذه البطاقة؟</h2>
+          <div class="fields">
+            <label class="field">اسم المرسل<input name="sender" id="sender" placeholder="اسمك" maxlength="100" required></label>
+            <label class="field">اسم المستلم<input name="receiver" id="receiver" placeholder="اسم الشخص العزيز" maxlength="100" required></label>
+            <label class="field">عنوان البطاقة<input name="title" id="title" value="عيد ميلاد سعيد" maxlength="150"></label>
+            <label class="field">تاريخ المناسبة<input name="date" id="date" type="date"></label>
+          </div>
+        </section>
+        <section class="group">
+          <h2 class="group-title"><b>02</b> لحظاتكم بالصور</h2>
+          <label class="upload-control"><input name="images" id="images" type="file" accept="image/*" multiple>＋ أضف صورًا من جهازك</label>
+          <p class="upload-hint" id="imageHint">حتى 5 صور، بحجم أقصى 25 ميغابايت للصورة</p><div class="thumbs" id="thumbs"></div>
+        </section>
+        <section class="group">
+          <h2 class="group-title"><b>03</b> ثلاث رسائل، ثلاث لحظات</h2>
+          <div class="fields">
+            <label class="field wide">كلماتك الأولى<textarea name="message" id="message" maxlength="4000" placeholder="اكتب رسالة تفتح بها البطاقة..." required></textarea></label>
+            <label class="field wide">رسالة الذكريات<textarea name="message2" id="message2" maxlength="4000" placeholder="ما الذي تتمنى أن يبقى في الذاكرة؟" required></textarea></label>
+            <label class="field wide">كلمة الختام<textarea name="message3" id="message3" maxlength="4000" placeholder="اختمها بكلمة من القلب..." required></textarea></label>
+          </div>
+        </section>
+        <section class="group">
+          <h2 class="group-title"><b>04</b> لمستك الأخيرة</h2>
+          <div class="theme-options">
+            <label class="theme-option"><input type="radio" name="theme" value="rose" checked><span><i class="swatch"></i> وردي</span></label>
+            <label class="theme-option"><input type="radio" name="theme" value="soft"><span><i class="swatch soft"></i> هادئ</span></label>
+            <label class="theme-option"><input type="radio" name="theme" value="blush"><span><i class="swatch blush"></i> دافئ</span></label>
+          </div>
+          <label class="upload-control" style="margin-top:12px"><input name="music" id="music" type="file" accept="audio/*">♫ اختر مقطعًا موسيقيًا</label><p class="upload-hint" id="musicHint">اختياري، ملف صوتي واحد</p>
+        </section>
+        <button class="submit" id="submitButton" type="submit">أنشئ البطاقة وشاركها ♡</button>
+        <div class="result hidden" id="result" aria-live="polite"></div>
+      </form>
+      <aside class="preview" aria-label="معاينة حية للبطاقة">
+        <div class="preview-head"><h2>معاينتك الحية</h2><span class="live"><i></i> تتحدث تلقائيًا</span></div>
+        <div class="preview-stage"><div class="mini-card theme-rose" id="miniCard"></div><div class="preview-count" id="previewCount"></div></div>
+        <div class="preview-controls"><button type="button" id="previewPrev" aria-label="المشهد السابق">‹</button><span id="previewLabel">الافتتاح</span><button type="button" id="previewNext" aria-label="المشهد التالي">›</button></div>
+      </aside>
+    </main>
+  </div>
+  <main class="card-view hidden" id="cardView"></main>
+  <div class="music-player hidden" id="musicPlayer">
+    <audio id="cardAudio" preload="metadata"></audio>
+    <button type="button" id="toggleMusic" aria-label="تشغيل الأغنية" title="تشغيل الأغنية">▶</button>
+    <div class="music-track"><div class="music-meta"><span>الموسيقى</span><span id="musicClock">0:00 / 0:00</span></div><input class="music-progress" id="musicProgress" type="range" min="0" max="0" step="0.1" value="0" aria-label="تقدم الأغنية"></div>
+  </div>
+  <dialog class="image-viewer" id="imageViewer" aria-label="عرض الصورة بالحجم الكامل">
+    <button type="button" id="closeImage" aria-label="إغلاق الصورة" title="إغلاق الصورة">×</button>
+    <img id="viewerImage" alt="">
+  </dialog>
+  <script>
+    const form=document.getElementById('cardForm');
+    let miniCard=document.getElementById('miniCard');
+    const imageInput=document.getElementById('images');
+    const musicInput=document.getElementById('music');
+    const result=document.getElementById('result');
+    const imageViewer=document.getElementById('imageViewer');
+    const viewerImage=document.getElementById('viewerImage');
+    const musicPlayer=document.getElementById('musicPlayer');
+    const cardAudio=document.getElementById('cardAudio');
+    const toggleMusic=document.getElementById('toggleMusic');
+    const musicProgress=document.getElementById('musicProgress');
+    const musicClock=document.getElementById('musicClock');
+    const sceneNames=['الافتتاح','رسالتك الأولى','صور الذكريات','رسالتك الثانية','كلمة الختام'];
+    let previewScene=0;
+    let selectedImages=[];
+
+    function esc(value){return String(value??'').replace(/[&<>"']/g,char=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));}
+    function formCard(){const values=Object.fromEntries(new FormData(form).entries());return {...values,images:selectedImages};}
+    function renderScene(card,index,isPublic=false){
+      const theme=`theme-${['rose','soft','blush'].includes(card.theme)?card.theme:'rose'}`;
+      const name=esc(card.receiver||'اسم المستلم');
+      const sender=esc(card.sender||'اسم المرسل');
+      const title=esc(card.title||'A special moment');
+      const images=(card.images||[]).map(image=>typeof image==='string'?image:image.url).filter(Boolean);
+      const prefix=isPublic?'public':'mini';
+      let content='';
+      if(index===0) content=`<div class="ornament">✳</div><div class="${prefix==='public'?'scene-kicker':'mini-kicker'}">هدية عيد ميلاد إلى</div><h${isPublic?'1':'2'}>${name}</h${isPublic?'1':'2'}><div class="${prefix==='public'?'public-title':'mini-title'}">${title}</div><div class="mini-heart">♡</div>${card.date?`<div class="public-date">${esc(card.date)}</div>`:'<div class="public-date">لحظة جميلة صُنعت بكل حب</div>'}`;
+      if(index===1) content=`<div class="ornament">❝</div><div class="${prefix==='public'?'scene-kicker':'mini-kicker'}">من القلب</div><p class="${prefix==='public'?'public-message':'mini-body'}">${esc(card.message||'اكتب رسالتك الأولى هنا...')}</p><div class="${prefix==='public'?'public-sign':'mini-sign'}">من ${sender}</div>`;
+      if(index===2){const photos=images.length?images.map(src=>`<img class="zoomable" src="${esc(src)}" alt="ذكرى جميلة" role="button" tabindex="0" aria-label="تكبير الصورة">`).join(''):`<div class="photo-placeholder">♡</div>`;content=`<div class="${prefix==='public'?'scene-kicker':'mini-kicker'}">صور تبقى قريبة</div>${isPublic?`<div class="public-photos">${photos}</div>`:`<img class="mini-photo zoomable" src="${esc(images[0]||'')}" alt="صورة من الذكريات" role="button" tabindex="0" aria-label="تكبير الصورة" style="${images.length?'':'display:none'}"><div class="photo-placeholder" style="${images.length?'display:none':''}">♡</div>`}<div class="${prefix==='public'?'public-sign':'mini-sign'}">ذكريات جميلة تستحق أن تبقى</div>`;}
+      if(index===3) content=`<div class="ornament">✳</div><div class="${prefix==='public'?'scene-kicker':'mini-kicker'}">ذكرى منكما</div><p class="${prefix==='public'?'public-message':'mini-body'}">${esc(card.message2||'اكتب رسالة الذكريات هنا...')}</p><div class="mini-heart">♡</div>`;
+      if(index===4) content=`<div class="ornament">♡</div><div class="${prefix==='public'?'scene-kicker':'mini-kicker'}">لك دائمًا</div><p class="${prefix==='public'?'public-message':'mini-body'}">${esc(card.message3||'اكتب كلمة الختام هنا...')}</p><div class="${prefix==='public'?'public-sign':'mini-sign'}">بكل الحب، ${sender}</div>`;
+      return `<section ${isPublic?'':'id="miniCard"'} class="${isPublic?'public-card':'mini-card'} ${theme}"><div class="birthday-decor" aria-hidden="true"><span>🎈</span><span>🎈</span><span>🕯️</span></div>${content}</section>`;
+    }
+    function updatePreview(){const card=formCard();miniCard.outerHTML=renderScene(card,previewScene);miniCard=document.getElementById('miniCard');document.getElementById('previewCount').textContent=`${previewScene+1} / 5`;document.getElementById('previewLabel').textContent=sceneNames[previewScene];}
+    document.querySelectorAll('#cardForm input,#cardForm textarea').forEach(input=>input.addEventListener('input',updatePreview));
+    document.querySelectorAll('input[name="theme"]').forEach(input=>input.addEventListener('change',updatePreview));
+    document.getElementById('previewPrev').addEventListener('click',()=>{previewScene=(previewScene+4)%5;updatePreview();});
+    document.getElementById('previewNext').addEventListener('click',()=>{previewScene=(previewScene+1)%5;updatePreview();});
+    imageInput.addEventListener('change',()=>{selectedImages=[...imageInput.files].slice(0,5).map(file=>URL.createObjectURL(file));if(imageInput.files.length>5){document.getElementById('imageHint').textContent='تم اختيار أول 5 صور فقط';}document.getElementById('thumbs').innerHTML=selectedImages.map(src=>`<img class="zoomable" src="${src}" alt="معاينة الصورة" role="button" tabindex="0" aria-label="تكبير الصورة">`).join('');updatePreview();});
+    musicInput.addEventListener('change',()=>{document.getElementById('musicHint').textContent=musicInput.files[0]?.name||'اختياري، ملف صوتي واحد';});
+    document.getElementById('closeImage').addEventListener('click',()=>imageViewer.close());
+    imageViewer.addEventListener('close',()=>{viewerImage.removeAttribute('src');});
+    document.addEventListener('click',event=>{const image=event.target.closest('img.zoomable');if(image){viewerImage.src=image.src;viewerImage.alt=image.alt||'صورة مكبرة';imageViewer.showModal();}else if(event.target===imageViewer)imageViewer.close();});
+    document.addEventListener('keydown',event=>{if(event.key==='Escape'&&imageViewer.open){imageViewer.close();return;}if((event.key==='Enter'||event.key===' ')&&event.target.matches('img.zoomable')){event.preventDefault();event.target.click();}});
+    function formatTime(seconds){if(!Number.isFinite(seconds))return '0:00';return `${Math.floor(seconds/60)}:${String(Math.floor(seconds%60)).padStart(2,'0')}`;}
+    function updateMusicProgress(){const duration=Number.isFinite(cardAudio.duration)?cardAudio.duration:0;musicProgress.max=duration;musicProgress.value=cardAudio.currentTime||0;musicClock.textContent=`${formatTime(cardAudio.currentTime||0)} / ${formatTime(duration)}`;}
+    toggleMusic.addEventListener('click',()=>{if(cardAudio.paused)cardAudio.play().catch(()=>{});else cardAudio.pause();});
+    cardAudio.addEventListener('play',()=>{toggleMusic.textContent='Ⅱ';toggleMusic.setAttribute('aria-label','إيقاف الأغنية مؤقتًا');toggleMusic.title='إيقاف الأغنية مؤقتًا';});
+    cardAudio.addEventListener('pause',()=>{toggleMusic.textContent='▶';toggleMusic.setAttribute('aria-label','تشغيل الأغنية');toggleMusic.title='تشغيل الأغنية';});
+    cardAudio.addEventListener('timeupdate',updateMusicProgress);
+    cardAudio.addEventListener('loadedmetadata',updateMusicProgress);
+    musicProgress.addEventListener('input',()=>{if(Number.isFinite(cardAudio.duration))cardAudio.currentTime=Number(musicProgress.value);});
+
+    form.addEventListener('submit',async event=>{
+      event.preventDefault();const button=document.getElementById('submitButton');button.disabled=true;button.textContent='يتم تجهيز بطاقتك...';result.className='result';result.textContent='لحظات وتصبح بطاقتك جاهزة.';
+      try{const payload=new FormData(form);payload.delete('images');[...imageInput.files].slice(0,5).forEach(file=>payload.append('images',file));const response=await fetch('/api/cards',{method:'POST',body:payload});const data=await response.json();if(!response.ok)throw new Error(data.error||'تعذر إنشاء البطاقة.');const link=location.origin+data.url;result.innerHTML=`<strong>أصبحت بطاقتك جاهزة ♡</strong><a class="share-url" href="${esc(link)}" target="_blank" rel="noopener">${esc(link)}</a><div class="share-row"><input id="shareLink" readonly value="${esc(link)}"><button type="button" id="copyLink">نسخ الرابط</button></div><a class="open-link" href="${esc(data.url)}" target="_blank" rel="noopener">فتح البطاقة</a>`;document.getElementById('copyLink').addEventListener('click',async()=>{await navigator.clipboard.writeText(link);document.getElementById('copyLink').textContent='تم النسخ';});}catch(error){result.className='result error';result.textContent=error.message;}finally{button.disabled=false;button.textContent='أنشئ البطاقة وشاركها ♡';}
+    });
+
+    async function openCard(id){
+      document.getElementById('builder').classList.add('hidden');
+      const view=document.getElementById('cardView');
+      view.classList.remove('hidden');
+      view.innerHTML='<div class="not-found">لحظة، نفتح بطاقتك ♡</div>';
+      try{
+        const response=await fetch(`/api/cards/${encodeURIComponent(id)}`);
+        if(!response.ok)throw new Error();
+        const card=await response.json();
+        if(card.music){cardAudio.src=card.music;cardAudio.load();musicPlayer.classList.remove('hidden');view.classList.add('has-music');}
+        else{cardAudio.pause();cardAudio.removeAttribute('src');musicPlayer.classList.add('hidden');view.classList.remove('has-music');}
+        let current=0;
+        const draw=()=>{
+          view.innerHTML=`<div class="public-brand">♡ MyCard</div>${renderScene(card,current,true)}<div class="card-controls"><button class="secondary" id="cardPrev" ${current===0?'disabled':''}>السابق</button><span>${current+1} / 5</span><button id="cardNext">${current===4?'من البداية':'التالي'}</button></div>`;
+          document.getElementById('cardPrev').addEventListener('click',()=>{current=Math.max(0,current-1);draw();});
+          document.getElementById('cardNext').addEventListener('click',()=>{current=current===4?0:current+1;draw();});
+        };
+        draw();
+      }catch{view.innerHTML='<div class="not-found">هذه البطاقة غير موجودة.</div>';}
+    }
+
+    const cardMatch=location.pathname.match(/^\/card\/([^/]+)\/?$/);
+    if(cardMatch)openCard(decodeURIComponent(cardMatch[1]));else updatePreview();
+  </script>
+</body>
+</html>
